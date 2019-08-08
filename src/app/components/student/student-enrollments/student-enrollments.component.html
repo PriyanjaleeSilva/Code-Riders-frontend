@@ -1,0 +1,230 @@
+<main>
+        <app-student-navbar></app-student-navbar>
+        
+         <!-- LEFT SIDEBAR	 -->
+         <ul id="sidenav-1" class="sidenav sidenav-fixed">
+            
+          <li><div class="user-view">
+            <div class="background">
+              <img src="../../../../assets/images/student/sidenav1.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="../../../../assets/images/student/profile.png"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div></li>
+          <li><a href="#!"><i class="material-icons">account_box</i>Profile</a></li>
+          <li><a [routerLink]="['/student_enrollments']"><i class="material-icons">subject</i>Enroll new courses</a></li>
+          <li><a [routerLink]="['/student_notices']"><i class="material-icons">notifications</i>Check notices</a></li>
+        </ul>
+
+<div>
+
+<div class="container">
+
+<table class="highlight" class="center">
+        <thead>
+          <tr>
+              <th>Our Courses</th>
+              <th>Enroll</th>
+              
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Java for Beginners</td>
+            <td><button class="btn waves-effect waves-light red darken-2" data-target="modal1" class="btn modal-trigger" type="submit" name="action">Enroll
+                </button>
+            </td>
+            
+          </tr>
+          <tr>
+            <td>Phython</td>
+            <td><button class="btn waves-effect waves-light red darken-2" data-target="modal1" class="btn modal-trigger" type="submit" name="action">Enroll
+                </button>
+            </td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td><button class="btn waves-effect waves-light red darken-2" data-target="modal1" class="btn modal-trigger" type="submit" name="action">Enroll
+                </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Graphic Designning</td>
+            <td><button class="btn waves-effect waves-light red darken-2" data-target="modal1" class="btn modal-trigger" type="submit" name="action">Enroll
+                </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Web Designning</td>
+            <td><button class="btn waves-effect waves-light red darken-2" data-target="modal1" class="btn modal-trigger" type="submit" name="action">Enroll
+                </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+ 
+
+<!-- Modal Structures -->
+<!--<div id="modal1" class="modal">
+    <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+        <div class="modal-content">
+            
+                <table>
+                <tr>
+                   <th>Course : </th>
+                   <td><input #name="ngModel" [(ngModel)]="courseService.selectedCourse.course"  type="text" class="validate">
+                   </td>
+                   
+                </tr> 
+                <tr>
+                    <th>Duration : </th>
+                    <td>3 months</td>
+                </tr> 
+                <tr>
+                    <th>Registration Fee : </th>
+                    <td>Rs. 3000.00</td>
+                </tr>
+                <tr>
+                    <th>Course Fee : </th>
+                    <td>Rs. 30,000.00</td>
+                </tr>
+                <tr>
+                    <th>Commencing Date : </th>
+                    <td>12/08/2019</td>
+                </tr>
+              
+
+              
+                <tr>
+                    <th>Date and Time : </th>
+                    <td>
+                        <div class="input-field col s12">
+                            <select>
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="1">Sunday 1.30 pm - 4.30 pm</option>
+                              <option value="2">Saturday 1.30 pm - 4.30 pm</option>
+                            </select>
+                            
+                        </div>
+                    </td>
+                </tr>
+              
+             
+                
+                <tr>
+                    <th>Enter your full name : </th>
+                    <td>
+                            
+                              <div class="input-field col s6">
+                                <input #name="ngModel" [(ngModel)]="courseService.selectedCourse.username" placeholder="Full name" id="first_name" type="text" class="validate">
+                                
+                              </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <th>Enter your username : </th>
+                        <td>
+                                
+                                  <div class="input-field col s6">
+                                    <input #name="ngModel" [(ngModel)]="courseService.selectedCourse.fullname" placeholder="Username" id="first_name" type="text" class="validate">
+                                    
+                                  </div>
+                            
+                        </td>
+                </tr>
+                <tr>
+                        <th>Enter your email address : </th>
+                        <td>
+                                
+                                  <div class="input-field col s6">
+                                    <input #name="ngModel" [(ngModel)]="courseService.selectedCourse.email" placeholder="Email" id="first_name" type="text" class="validate">
+                                    
+                                  </div>
+                            
+                        </td>
+                </tr>
+             
+            </table>
+          
+            
+        </div>
+        <div class="modal-footer">
+          <button class="btn waves-effect waves-red default" type="submit" [disabled]="!courseForm.valid">Enroll</button>
+         
+          <div class="divider"></div>
+          <a class="modal-close btn">Close</a>
+        </div>
+      </form>
+      </div>
+    --> 
+
+    <div id="modal1" class="modal">
+        <form class="form">
+            <div class="modal-content">
+              <table>
+                  <tr>
+                      <th>Enter course : </th>
+                      <td>
+                              
+                          <div class="input-field col s6">
+                              <input type="text" class="form-control" [(ngModel)]="courseData.course" name="course" >
+                          </div>
+                          
+                      </td>
+                  </tr>
+                <tr>
+                    <th>Enter your username : </th>
+                    <td>
+                            
+                        <div class="input-field col s6">
+                            <input type="text" class="form-control" [(ngModel)]="courseData.username" name="username" >
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>Enter your full name : </th>
+                    <td>
+                            
+                        <div class="input-field col s6">
+                            <input type="text" class="form-control" [(ngModel)]="courseData.fullname" name="fullname" >
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>Enter email : </th>
+                    <td>
+                            
+                        <div class="input-field col s6">
+                            <input type="text" class="form-control" [(ngModel)]="courseData.email" name="email" >
+                        </div>
+                        
+                    </td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" (click)="onSubmit()" value="Submit" class="modal-close btn">
+         
+                <div class="divider"></div>
+                <a class="modal-close btn">Close</a>
+            </div>
+        </form>
+
+        
+    </div>
+
+    <div class="push"></div>
+  </main>
+
+<!-- Footer -->
+<footer class="section teal darken-2 white-text center">
+    <p class="flow-text">VICERANT IT Solutions &copy; 2019</p>
+</footer>
+

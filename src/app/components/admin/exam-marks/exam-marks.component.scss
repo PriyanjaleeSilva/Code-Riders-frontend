@@ -1,0 +1,19 @@
+table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+
+.table-editable {
+    position: relative;
+    
+    .glyphicon {
+      font-size: 20px;
+    }
+  }
+
+  .btn {
+    margin-right: 15px;
+} 
