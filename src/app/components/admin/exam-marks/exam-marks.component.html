@@ -17,140 +17,46 @@
 <div class="container">
 
     <h3>Exam Marks</h3><br><br>
-    <div class="row">
-        <form class="col s10" #marksForm="ngForm" (ngSubmit)="onSubmit(marksForm)">
-            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="examMarksService.selectedMarks._id">
-          <div class="row">
-            <div class="input-field col s6">
-                <input id="course" name="course" type="text" class="validate" #name="ngModel" [(ngModel)]="examMarksService.selectedMarks.course">
-                <label for="course">Course</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="fullname" name="fullname" type="text" class="validate" #name="ngModel" [(ngModel)]="examMarksService.selectedMarks.fullname">
-              <label for="fullname">Full Name</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-                <input id="username" name="username" type="text" class="validate" #name="ngModel" [(ngModel)]="examMarksService.selectedMarks.username">
-                <label for="username">Username</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-                <input id="marks" name="marks" type="text" class="validate" #name="ngModel" [(ngModel)]="examMarksService.selectedMarks.marks">
-                <label for="marks">Marks</label>
-            </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s6">
-                <button class="btn btn-custom right" type="button" (click)="resetForm(noticeForm)">Reset</button>
-                <button class="btn btn-custom right" type="submit" [disabled]="!noticeForm.valid">Submit</button>
-              </div>
-          </div>  
-          
-        </form>
+    
+    <h5>Select Course</h5>
+    <div class="input-field col s6">
+        <select  class="browser-default" [(ngModel)]="course" >
+                    
+              <!-- <option  selected>select chat group</option>  -->
+              <option *ngFor="let item of coursearray" value={{item.course}} >{{item.course}}</option>
+                                 
+       </select>
+                
     </div>
-          
 
-
-<div class="row">
-    <div class="col s6">
+    <form>
       <div class="card-panel blue lighten-5">
-          <div class="card-content black-text">
-              <form action="#">
-                  <table>
+        <div class="card-content black-text">
+            <form action="#">
+                <table>
 
-                    <h5>Phython</h5>
-                  
-                    <tr>
-                      
-                      <th>Full Name</th>
-                      <th>Username</th>
-                      <th>Marks</th>
-                    </tr>
-                  
-                  <tr *ngFor="let mks of examMarksService.marks">
+                  <h5>{{this.course}}</h5>
+                
+                  <tr>
                     
-                    <td>{{mks.fullname}}</td>
-                    <td>{{mks.username}}</td>
-                    <td>{{mks.marks}}</td>
-                    
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Marks</th>
                   </tr>
-                </table>
-                </form>
-          
-          </div>
-      </div>
-    </div>
-
-    <div class="col s6">
-        <div class="card-panel blue lighten-5">
-            <div class="card-content black-text">
-                <form action="#">
-                    <table>
-  
-                      <h5>Java for Beginners</h5>
-                    
-                      <tr>
-                        
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Marks</th>
-                      </tr>
-                    
-                    <tr *ngFor="let Javamks of examMarksService.Javamarks">
-                      
-                      <td>{{Javamks.fullname}}</td>
-                      <td>{{Javamks.username}}</td>
-                      <td>{{Javamks.marks}}</td>
-                      
-                    </tr>
-                  </table>
-                  </form>
-            
-            </div>
+                
+                <tr *ngFor="let sts of enrollmentService.studentarray">
+                  
+                  <td>{{sts.fullname}}</td>
+                  <td>{{sts.username}}</td>
+                  <td></td>
+                  
+                </tr>
+              </table>
+              </form>
+        
         </div>
       </div>
-
-</div>
-
-<div class="row">
-    <div class="col s6">
-      <div class="card-panel blue lighten-5">
-          <div class="card-content black-text">
-              <form action="#">
-                  <table>
-
-                    <h5>C</h5>
-                  
-                    <tr>
-                      
-                      <th>Full Name</th>
-                      <th>Username</th>
-                      <th>Marks</th>
-                    </tr>
-                  
-                  <tr *ngFor="let Cmks of examMarksService.Cmarks">
-                    
-                    <td>{{Cmks.fullname}}</td>
-                    <td>{{Cmks.username}}</td>
-                    <td>{{Cmks.marks}}</td>
-                    
-                  </tr>
-                </table>
-                </form>
-          
-          </div>
-      </div>
-    </div>
-
-    
-</div>
-
-
+    </form>
 
 
 </div><!--container-->

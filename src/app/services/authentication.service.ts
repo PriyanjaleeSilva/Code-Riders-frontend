@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Student } from '../components/student/student-dashboard/student.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthenticationService {
   private _loginUrl = "http://localhost:3000/users/authenticate";
   private _student_dashboard_url = "http://localhost:3000/users/student_dashboard";
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _router: Router) { }
 
   registerUser(user){
     return this.http.post<any>(this._registerUrl, user)
@@ -23,6 +23,8 @@ export class AuthenticationService {
   loginUser(user){
     return this.http.post<any>(this._loginUrl, user)
   }
+
+ 
 
   loggedIn(){
     return !!localStorage.getItem('token')
@@ -41,8 +43,10 @@ export class AuthenticationService {
     this.user = user;
   }
 
-  getStudentProfile(){
-    return this.http.get<any[]>(this._student_dashboard_url);
+  logoutUser(){
+    localStorage.removeItem('user');
+    localStorage.removeItem('id_token');  
+    this._router.navigate(['/login']);
   }
   
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { TutorNoticeComponent } from './components/tutor/tutor-notice/tutor-noti
 import { ContactTutorPageComponent } from './components/contact-tutor-page/contact-tutor-page.component';
 
 import { AuthenticationService } from './services/authentication.service';
+import { ValidateService } from './services/validate.service';
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
@@ -34,6 +36,14 @@ import { CourseComponent } from './components/student/course/course.component';
 import { PaymentComponent } from './components/student/payment/payment.component';
 import { StudentNoticeComponent } from './components/student/student-notice/student-notice.component';
 import { CourseDetailsComponent } from './components/admin/course-details/course-details.component';
+import { FilesJavaForBeginnersComponent } from './components/tutor/files-java-for-beginners/files-java-for-beginners.component';
+import { JavaComponent } from './components/webpages/java/java.component';
+import { CheckoutComponent } from './components/student/checkout/checkout.component';
+import { WebComponent } from './components/webpages/web/web.component';
+import { GraphicComponent } from './components/webpages/graphic/graphic.component';
+import { CComponent } from './components/webpages/c/c.component';
+import { PhythonComponent } from './components/webpages/phython/phython.component';
+import { StudentChatComponent } from './components/student/student-chat/student-chat.component';
 
 
 @NgModule({
@@ -62,15 +72,24 @@ import { CourseDetailsComponent } from './components/admin/course-details/course
     PaymentComponent,
     StudentNoticeComponent,
     CourseDetailsComponent,
+    FilesJavaForBeginnersComponent,
+    JavaComponent,
+    CheckoutComponent,
+    WebComponent,
+    GraphicComponent,
+    CComponent,
+    PhythonComponent,
+    StudentChatComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
-  providers: [AuthenticationService, AuthGuard,
+  providers: [AuthenticationService, ValidateService, AuthGuard,
      {
        provide: HTTP_INTERCEPTORS,
        useClass: TokenInterceptorService,

@@ -1,146 +1,120 @@
 <main>
-<app-student-navbar></app-student-navbar>
-
- <!-- LEFT SIDEBAR	 -->
- <ul id="sidenav-1" class="sidenav sidenav-fixed">
-	
-  <li><div class="user-view">
-    <div class="background">
-      <img src="../../../../assets/images/student/sidenav1.jpg">
-    </div>
-    <a href="#user"><img class="circle" src="../../../../assets/images/student/profile.png"></a>
-    <a href="#name"><span class="white-text name">John Doe</span></a>
-    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-  </div></li>
-  <li><a href="#!"><i class="material-icons">account_box</i>Profile</a></li>
-  <li><a [routerLink]="['/student_enrollments']"><i class="material-icons">subject</i>Enroll new courses</a></li>
-  <li><a [routerLink]="['/student_notice']"><i class="material-icons">notifications</i>Check notices</a></li>
+  <app-student-navbar></app-student-navbar>
   
-
-
-</ul>
-
-
-<div *ngIf="user">
-    <h2 class="page-header">{{user.name}}</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Username: {{user.username}}</li>
-      <li class="list-group-item">Email: {{user.email}}</li>
-    </ul>
-</div>
-
-
-<div class="container">
-  <h3>My Courses</h3>
-<div>
-    <div class="row">
-        <div class="col s12 m12">
-          <div class="card brown lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title center"><h5>Java for Beginners</h5></span>
-              
-            </div>
-            <div class="card-action center">
-              <a [routerLink]="['/course']"><b>Go to course</b></a>
-              <a [routerLink]="['/payment']"><b>Payments</b></a>
-              <a href="#"><b>Chat group</b></a>
-              <a href="#"><b>Check attendance</b></a>
-              <a href="#"><b>Check exam marks</b></a>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-
-<div>
-    <div class="row">
-        <div class="col s12 m12">
-          <div class="card brown lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title center"><h5>Phython</h5></span>
-              
-            </div>
-            <div class="card-action center">
-                <a [routerLink]="['/course']"><b>Go to course</b></a>
-                <a href="#"><b>Payments</b></a>
-                <a href="#"><b>Chat group</b></a>
+  <app-student-sidenav></app-student-sidenav>
+  
+  
+  <div class="container">
+    <h3>My Courses</h3>
+  
+  <div *ngFor="let item of courses ">
+      <div class="row">
+          <div class="col s12 m12">
+            <div class="card brown lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title center"><h5>{{item.course}} </h5></span>
+                
+              </div>
+              <div class="card-action center">
+                <a ><b (click)="onSelect(item)">Go to course</b></a>
+                <a [routerLink]="['/payment']"><b>Payments</b></a>
+                <!-- <a href="#"><b>Chat group</b></a> -->
                 <a href="#"><b>Check attendance</b></a>
                 <a href="#"><b>Check exam marks</b></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-</div>
-
-<div>
-    <div class="row">
-        <div class="col s12 m12">
-          <div class="card brown lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title center"><h5>C</h5></span>
-              
-            </div>
-            <div class="card-action center">
-                <a [routerLink]="['/course']"><b>Go to course</b></a>
-                <a href="#"><b>Payments</b></a>
-                <a href="#"><b>Chat group</b></a>
-                <a href="#"><b>Check attendance</b></a>
-                <a href="#"><b>Check exam marks</b></a>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-
-<div>
-    <div class="row">
-        <div class="col s12 m12">
-          <div class="card brown lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title center"><h5>Web Designning</h5></span>
-              
-            </div>
-            <div class="card-action center">
-                <a [routerLink]="['/course']"><b>Go to course</b></a>
-                <a href="#"><b>Payments</b></a>
-                <a href="#"><b>Chat group</b></a>
-                <a href="#"><b>Check attendance</b></a>
-                <a href="#"><b>Check exam marks</b></a>
+  </div>
+  
+  <!-- <div>
+      <div class="row">
+          <div class="col s12 m12">
+            <div class="card brown lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title center"><h5>Phython</h5></span>
+                
+              </div>
+              <div class="card-action center">
+                  <a [routerLink]="['/course']"><b>Go to course</b></a>
+                  <a href="#"><b>Payments</b></a>
+                  <a href="#"><b>Chat group</b></a>
+                  <a href="#"><b>Check attendance</b></a>
+                  <a href="#"><b>Check exam marks</b></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-</div>
-
-<div>
-    <div class="row">
-        <div class="col s12 m12">
-          <div class="card brown lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title center"><h5>Graphic Designning</h5></span>
-              
-            </div>
-            <div class="card-action center">
-                <a [routerLink]="['/course']"><b>Go to course</b></a>
-                <a href="#"><b>Payments</b></a>
-                <a href="#"><b>Chat group</b></a>
-                <a href="#"><b>Check attendance</b></a>
-                <a href="#"><b>Check exam marks</b></a>
+  </div>
+  
+  <div>
+      <div class="row">
+          <div class="col s12 m12">
+            <div class="card brown lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title center"><h5>C</h5></span>
+                
+              </div>
+              <div class="card-action center">
+                  <a [routerLink]="['/course']"><b>Go to course</b></a>
+                  <a href="#"><b>Payments</b></a>
+                  <a href="#"><b>Chat group</b></a>
+                  <a href="#"><b>Check attendance</b></a>
+                  <a href="#"><b>Check exam marks</b></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-</div>
-</div>
-
-
-
-</main>
-
-<!-- Footer -->
-<footer class="section teal darken-2 white-text center">
-    <p class="flow-text">VICERANT IT Solutions &copy; 2019</p>
-</footer>
-
-
-
+  </div>
+  
+  <div>
+      <div class="row">
+          <div class="col s12 m12">
+            <div class="card brown lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title center"><h5>Web Designning</h5></span>
+                
+              </div>
+              <div class="card-action center">
+                  <a [routerLink]="['/course']"><b>Go to course</b></a>
+                  <a href="#"><b>Payments</b></a>
+                  <a href="#"><b>Chat group</b></a>
+                  <a href="#"><b>Check attendance</b></a>
+                  <a href="#"><b>Check exam marks</b></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  
+  <div>
+      <div class="row">
+          <div class="col s12 m12">
+            <div class="card brown lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title center"><h5>Graphic Designning</h5></span>
+                
+              </div>
+              <div class="card-action center">
+                  <a [routerLink]="['/course']"><b>Go to course</b></a>
+                  <a href="#"><b>Payments</b></a>
+                  <a href="#"><b>Chat group</b></a>
+                  <a href="#"><b>Check attendance</b></a>
+                  <a href="#"><b>Check exam marks</b></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div> -->
+  </div>
+  
+  
+  
+  
+  
+  <!-- Footer -->
+  <app-student-footer></app-student-footer>
+  
+  </main> 
+  
+  

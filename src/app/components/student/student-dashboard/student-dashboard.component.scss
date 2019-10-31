@@ -1,11 +1,3 @@
-.card-small {
-    width:400px;
-}
-
-.yourClass {
-  margin-left:100px;
-}
-
 header,
 main,
 nav,
@@ -18,34 +10,34 @@ body {
 }
 
 @media only screen and (max-width: 992px) {
-    header,
-    main,
-    footer {
-      padding-left: 0;
-    }
+  header,
+  main,
+  footer {
+    padding-left: 0;
   }
-  
-  #credits li,
-  #credits li a {
-    color: white;
-  }
-  
-  #credits li a {
-    font-weight: bold;
-  }
-  
-  .footer-copyright .container,
-  .footer-copyright .container a {
-    color: #BCC2E2;
-  }
-  
-  .fab-tip {
-    position: fixed;
-    right: 85px;
-    padding: 0px 0.5rem;
-    text-align: right;
-    background-color: #323232;
-    border-radius: 2px;
-    color: #FFF;
-    width: auto;
-  }
+}
+
+#credits li,
+#credits li a {
+  color: white;
+}
+
+#credits li a {
+  font-weight: bold;
+}
+
+.footer-copyright .container,
+.footer-copyright .container a {
+  color: #BCC2E2;
+}
+
+.fab-tip {
+  position: fixed;
+  right: 85px;
+  padding: 0px 0.5rem;
+  text-align: right;
+  background-color: #323232;
+  border-radius: 2px;
+  color: #FFF;
+  width: auto;
+}

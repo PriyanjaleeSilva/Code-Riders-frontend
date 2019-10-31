@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
+import { ValidateService } from '../../services/validate.service';
 
 
 import * as M from '../../../assets/materialize/materialize/js/materialize.min.js'
@@ -16,7 +17,8 @@ export class HomepageComponent implements OnInit {
   options = {};
 
   constructor(
-    private _auth: AuthenticationService
+    private _auth: AuthenticationService,
+    private validate: ValidateService
   ) { }
 
   ngOnInit() {
@@ -29,18 +31,21 @@ export class HomepageComponent implements OnInit {
         interval: 6000
       });
 
+      //drop down
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems);
+      });
+
       // Auto Complete - search
     const ac = document.querySelector('.autocomplete');
     M.Autocomplete.init(ac, {
         data: {
-          "Aruba": null,
-          "Cancun Mexico": null,
-          "Hawaii": null,
-          "Florida": null,
-          "California": null,
-          "Jamaica": null,
-          "Europe": null,
-          "The Bahamas": null,
+          "C": null,
+          "Graphic Designing": null,
+          "Java for Beginners": null,
+          "Phython": null,
+          "Web Designing": null
         }
       });
 
@@ -61,6 +66,9 @@ export class HomepageComponent implements OnInit {
           err => console.log(err)
        )
   }
+
+
+
 
   
 }
