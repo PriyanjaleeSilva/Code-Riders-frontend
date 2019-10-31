@@ -34,6 +34,12 @@ import { CourseComponent } from './components/student/course/course.component';
 import { PaymentComponent } from './components/student/payment/payment.component';
 import { StudentNoticeComponent } from './components/student/student-notice/student-notice.component';
 import { CourseDetailsComponent } from './components/admin/course-details/course-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReportsComponent } from './components/admin/reports/reports.component';
+import {MaterialModule} from './material';
+import { ReactiveFormsModule  } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -62,13 +68,17 @@ import { CourseDetailsComponent } from './components/admin/course-details/course
     PaymentComponent,
     StudentNoticeComponent,
     CourseDetailsComponent,
+    ReportsComponent,   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthenticationService, AuthGuard,
      {

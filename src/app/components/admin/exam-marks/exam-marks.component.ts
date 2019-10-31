@@ -74,7 +74,8 @@ export class ExamMarksComponent implements OnInit {
       course: "",
       fullname: "",
       username: "",
-      marks: ""
+      marks: "",
+      date:new Date(0)
     }
   
 }

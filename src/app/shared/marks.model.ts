@@ -3,5 +3,7 @@ export class Marks {
     course: String;
     fullname: String;
     username: String;
-    marks: String
+    marks: String;
+    date: Date;
+
 }

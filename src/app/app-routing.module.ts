@@ -17,6 +17,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AttendanceManagementComponent } from './components/admin/attendance-management/attendance-management.component';
 import { ExamMarksComponent } from './components/admin/exam-marks/exam-marks.component';
 import { CourseComponent } from './components/student/course/course.component';
+import { ReportsComponent } from './components/admin/reports/reports.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'admin_dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
   { path: 'attendance_management', component: AttendanceManagementComponent, canActivate: [AuthGuard]},
   { path: 'exam_marks', component: ExamMarksComponent, canActivate: [AuthGuard]},
+  { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard]},
   
 ];
 
