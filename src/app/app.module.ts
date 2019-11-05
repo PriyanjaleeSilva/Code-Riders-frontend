@@ -36,6 +36,14 @@ import { CourseComponent } from './components/student/course/course.component';
 import { PaymentComponent } from './components/student/payment/payment.component';
 import { StudentNoticeComponent } from './components/student/student-notice/student-notice.component';
 import { CourseDetailsComponent } from './components/admin/course-details/course-details.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReportsComponent } from './components/admin/reports/reports.component';
+import {MaterialModule} from './material';
+import { ReactiveFormsModule  } from '@angular/forms';
+
+
+
 import { FilesJavaForBeginnersComponent } from './components/tutor/files-java-for-beginners/files-java-for-beginners.component';
 import { JavaComponent } from './components/webpages/java/java.component';
 import { CheckoutComponent } from './components/student/checkout/checkout.component';
@@ -44,6 +52,7 @@ import { GraphicComponent } from './components/webpages/graphic/graphic.componen
 import { CComponent } from './components/webpages/c/c.component';
 import { PhythonComponent } from './components/webpages/phython/phython.component';
 import { StudentChatComponent } from './components/student/student-chat/student-chat.component';
+
 
 
 @NgModule({
@@ -72,6 +81,9 @@ import { StudentChatComponent } from './components/student/student-chat/student-
     PaymentComponent,
     StudentNoticeComponent,
     CourseDetailsComponent,
+
+    ReportsComponent,   
+
     FilesJavaForBeginnersComponent,
     JavaComponent,
     CheckoutComponent,
@@ -80,14 +92,20 @@ import { StudentChatComponent } from './components/student/student-chat/student-
     CComponent,
     PhythonComponent,
     StudentChatComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+
     FileUploadModule
+
   ],
   providers: [AuthenticationService, ValidateService, AuthGuard,
      {

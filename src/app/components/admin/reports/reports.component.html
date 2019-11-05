@@ -1,0 +1,83 @@
+<main>
+    <app-student-navbar></app-student-navbar>
+    
+     <!-- LEFT SIDEBAR	 -->
+     <ul id="sidenav-1" class="sidenav sidenav-fixed">
+      
+      <li><div class="user-view">
+        <div class="background">
+          <img src="../../../../assets/images/student/sidenav1.jpg">
+        </div>
+        <a href="#user"><img class="circle" src="../../../../assets/images/student/profile.png"></a>
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a href="#!"><i class="material-icons">account_box</i>Profile</a></li>
+      <li><a [routerLink]="['/student_enrollments']"><i class="material-icons">subject</i>Enroll new courses</a></li>
+      <li><a [routerLink]="['/student_notice']"><i class="material-icons">notifications</i>Check notices</a></li>
+      
+    
+    
+    </ul>
+    
+    
+    <div *ngIf="user">
+        <h2 class="page-header">{{user.name}}</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Username: {{user.username}}</li>
+          <li class="list-group-item">Email: {{user.email}}</li>
+        </ul>
+    </div>
+    
+    
+    <div class="container">
+      
+    
+    
+      <form>
+        <mat-form-field class="autocompleteselect" >
+            <mat-placeholder class="placeholder" style= "color:#009688;">Select the report type</mat-placeholder>
+          <input id="select" type="text"  matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='getReports($event.option.value)'>
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option.name}}
+            </mat-option>
+          </mat-autocomplete>
+          
+        </mat-form-field>
+      </form>
+      
+      
+    
+      
+    
+        
+      
+      
+       
+    <div>
+            <canvas id="lineChart" ></canvas>
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    
+    
+    </main>
+    
+    <!-- Footer -->
+    <!-- footer class="section teal darken-2 white-text center">
+        <p>VICERANT IT Solutions &copy; 2019</p>
+    </footer> -->
+    
+    
+    
+    

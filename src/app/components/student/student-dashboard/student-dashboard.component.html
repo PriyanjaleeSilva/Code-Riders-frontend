@@ -1,111 +1,23 @@
 <main>
   <app-student-navbar></app-student-navbar>
   
-  <app-student-sidenav></app-student-sidenav>
-  
-  
-  <div class="container">
-    <h3>My Courses</h3>
-  
-  <div *ngFor="let item of courses ">
-      <div class="row">
-          <div class="col s12 m12">
-            <div class="card brown lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title center"><h5>{{item.course}} </h5></span>
-                
-              </div>
-              <div class="card-action center">
-                <a ><b (click)="onSelect(item)">Go to course</b></a>
-                <a [routerLink]="['/payment']"><b>Payments</b></a>
-                <!-- <a href="#"><b>Chat group</b></a> -->
-                <a href="#"><b>Check attendance</b></a>
-                <a href="#"><b>Check exam marks</b></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div>
-  
-  <!-- <div>
-      <div class="row">
-          <div class="col s12 m12">
-            <div class="card brown lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title center"><h5>Phython</h5></span>
-                
-              </div>
-              <div class="card-action center">
-                  <a [routerLink]="['/course']"><b>Go to course</b></a>
-                  <a href="#"><b>Payments</b></a>
-                  <a href="#"><b>Chat group</b></a>
-                  <a href="#"><b>Check attendance</b></a>
-                  <a href="#"><b>Check exam marks</b></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div>
-  
-  <div>
-      <div class="row">
-          <div class="col s12 m12">
-            <div class="card brown lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title center"><h5>C</h5></span>
-                
-              </div>
-              <div class="card-action center">
-                  <a [routerLink]="['/course']"><b>Go to course</b></a>
-                  <a href="#"><b>Payments</b></a>
-                  <a href="#"><b>Chat group</b></a>
-                  <a href="#"><b>Check attendance</b></a>
-                  <a href="#"><b>Check exam marks</b></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div>
-  
-  <div>
-      <div class="row">
-          <div class="col s12 m12">
-            <div class="card brown lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title center"><h5>Web Designning</h5></span>
-                
-              </div>
-              <div class="card-action center">
-                  <a [routerLink]="['/course']"><b>Go to course</b></a>
-                  <a href="#"><b>Payments</b></a>
-                  <a href="#"><b>Chat group</b></a>
-                  <a href="#"><b>Check attendance</b></a>
-                  <a href="#"><b>Check exam marks</b></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div>
-  
-  <div>
-      <div class="row">
-          <div class="col s12 m12">
-            <div class="card brown lighten-5">
-              <div class="card-content black-text">
-                <span class="card-title center"><h5>Graphic Designning</h5></span>
-                
-              </div>
-              <div class="card-action center">
-                  <a [routerLink]="['/course']"><b>Go to course</b></a>
-                  <a href="#"><b>Payments</b></a>
-                  <a href="#"><b>Chat group</b></a>
-                  <a href="#"><b>Check attendance</b></a>
-                  <a href="#"><b>Check exam marks</b></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div> -->
+
+
+
+</ul>
+
+
+<div *ngIf="user">
+    <h2 class="page-header">{{user.name}}</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Username: {{user.username}}</li>
+      <li class="list-group-item">Email: {{user.email}}</li>
+    </ul>
+</div>
+
+
+<div class="container">
+
   </div>
   
   
