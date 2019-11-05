@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../../services/authentication.service';
-import { Router } from '@angular/router';
-import { Student } from './student.model';
+// import { AuthenticationService } from '../../../services/authentication.service';
+import { CourseDetailsService } from '../../../services/course-details.service';
+import { CourseService } from '../../../services/enrollment.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-student-dashboard',
@@ -10,16 +11,31 @@ import { Student } from './student.model';
 })
 export class StudentDashboardComponent implements OnInit {
 
-  
+  user = JSON.parse(localStorage.getItem("user")); 
+
+  courses : any;
 
   constructor(
-    private authService: AuthenticationService, 
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-
+    private courseService: CourseService,
+    private router: Router,
+  ) { 
+    this.getCourse();
   }
 
-  
+  ngOnInit() {
+    
+  }
+  getCourse(){
+    this.courseService.getStudentCoursesByusername(this.user.username)
+.then((res)=>{
+    this.courses = res;
+    console.log(this.courses);
+});  }
+
+onSelect(item){
+  this.router.navigate(['/student_dashboard',item.course]);
+
+}
+
+   
 }

@@ -1,63 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CourseService } from '../../../services/course.service';
+import { CourseService} from '../../../services/enrollment.service';
+import { WebSocketService} from '../../../services/web-socket.service';
+
 import { Course } from '../../../shared/course.model';
 
-declare var M: any;
+//declare var M: any;
 
-import * as N from '../../../../assets/materialize/materialize/js/materialize.min.js';
+//import * as N from '../../../../assets/materialize/materialize/js/materialize.min.js';
 
 @Component({
   selector: 'app-student-enrollments',
   templateUrl: './student-enrollments.component.html',
   styleUrls: ['./student-enrollments.component.scss'],
-  providers: [ CourseService ]
+  
 })
 export class StudentEnrollmentsComponent implements OnInit {
 
-  courseData = {
-    _id: "",
-    course: "",
-    username: "",
-    fullname: "",
-    email: ""
-  };
 
-  constructor(private courseService: CourseService) { }
+  user = JSON.parse(localStorage.getItem("user")); 
+  course : '';
+  coursearray: any;
+  
+  
+
+  constructor(private enrollmentService: CourseService, private coursegroupService: WebSocketService) { }
 
   ngOnInit() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = N.Modal.init(elems);
-
-    var options = document.querySelectorAll('select');
-    var instances = N.FormSelect.init(options);
-
-    this.resetForm();
+   this.groups();
   }
 
-  resetForm() {
-   
-    this.courseData = {
-      _id: "",
-      course: "",
-      username: "",
-      fullname: "",
-      email: ""
-    };
-}
 
-  onSubmit(){
-    
-    this.courseService.postCourse(this.courseData)
-       .subscribe(
-        res => {
-          console.log(res);
-          M.toast({ html: 'Enrolled successfully', classes: 'rounded '});
-          this.resetForm();
-          },
-          err => console.log(err)
-       )
+ Submit(){
+  this.enrollmentService.saveEnrollments({course:this.course, username:this.user.username, fullname:this.user.name, email:this.user.email}).then((result)=>{
+    console.log(result);
+    }, (err)=>{
+      console.log(err);
+   });
+ }
+
+ groups(){
+  this.coursegroupService.getchatgroups().then((data)=>{
+    this.coursearray = data;
+    console.log(this.coursearray);
+  });
   }
+  
   
 
 }

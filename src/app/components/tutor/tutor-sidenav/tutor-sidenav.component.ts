@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as M from '../../../../assets/materialize/materialize/js/materialize.min.js';
+import { AuthenticationService } from '../../../services/authentication.service';
+import { Router } from '@angular/router';
+import { Teacher } from './teacher.model';
 
 @Component({
   selector: 'app-tutor-sidenav',
@@ -8,11 +10,16 @@ import * as M from '../../../../assets/materialize/materialize/js/materialize.mi
 })
 export class TutorSidenavComponent implements OnInit {
 
-  constructor() { }
+  currentUser: Teacher;
+  teachers: Teacher[] = [];
+
+  constructor(
+    private authService: AuthenticationService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
 
 }

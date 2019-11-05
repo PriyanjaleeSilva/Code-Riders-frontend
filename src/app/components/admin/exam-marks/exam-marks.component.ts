@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ExamMarksService } from '../../../services/exam-marks.service';
 import { NgForm } from '@angular/forms';
 import { Marks } from '../../../shared/marks.model';
+import { CourseDetailsService } from '../../../services/course-details.service';
+import { CourseService} from '../../../services/enrollment.service';
 
 import * as N from '../../../../assets/materialize/materialize/js/materialize.min.js';
 declare var M: any;
@@ -14,8 +16,14 @@ declare var M: any;
 })
 export class ExamMarksComponent implements OnInit {
 
+  course : '';
+  coursearray: any;
+  studentarray: any;
   
-  constructor(private examMarksService: ExamMarksService) { }
+  constructor(private examMarksService: ExamMarksService, private courseDetailsService: CourseDetailsService, private enrollmentService: CourseService ) { 
+    this.getCourse();
+    this.getAllStudentsOfaCourse();
+  }
 
   ngOnInit() {
     
@@ -25,6 +33,22 @@ export class ExamMarksComponent implements OnInit {
     this.refreshJavaMarksList();
     
   }
+
+
+  getCourse(){
+    this.courseDetailsService.getcourseDetailsList()
+.subscribe((res)=>{
+    this.coursearray = res;
+    console.log(this.coursearray);
+});  }
+
+
+getAllStudentsOfaCourse(){
+  this.enrollmentService.getStudentNamesBycoursename(this.course)
+.then((res)=>{
+  this.studentarray = res;
+  console.log(this.studentarray);
+});  }
 
   onSubmit(form : NgForm){
     if(form.value._id == ""){

@@ -5,34 +5,34 @@
     <ul class="slides">
       <li>
         <img src="../../../assets/images/website/Slider1.jpg" alt="" height="250px" width="580px">
-        <div class="caption center-align">
-          <h2>Join Us</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
+        <div class="caption left-align">
+          <h2>Join with Us</h2>
+          <h5 class="black-text text-lighten-3 hide-on-small-only">We provide high standard IT courses for you.</h5>
+          
         </div>
       </li>
       <li>
         <img src="../../../assets/images/website/Slider3.jpg" alt="" height="250px" width="580px">
-        <div class="caption left-align">
-          <h2>We Work With All Budgets</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
+        <div class="caption right-align">
+          <h2>We can guide you</h2>
+          <h5 class="black-text text-lighten-3 hide-on-small-only">We have the best professionals to guide you.</h5>
+          
         </div>
       </li>
       <li>
         <img src="../../../assets/images/website/Slider2.jpg" alt="" height="250px" width="580px">
         <div class="caption right-align">
-          <h2>Group & Individual Getaways</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
+          <h2>Choose the best for yourself</h2>
+          <h5 class="black-text text-lighten-3 hide-on-small-only">We can help you to sharpen your IT skills.</h5>
+          
         </div>
       </li>
       <li>
-        <img src="../../../assets/images/website/Slider4.jpg" alt="" height="250px" width="580px">
-        <div class="caption right-align">
-          <h2>Group & Individual Getaways</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
-          <a href="#" class="btn btn-large">Learn More</a>
+        <img src="../../../assets/images/website/Slider5.jpg" alt="" height="250px" width="580px">
+        <div class="caption left-align">
+          <h2>Achieve your goals</h2>
+          <h5 class="light gray-text text-lighten-3 hide-on-small-only">Climb high up the ladder of success with us.</h5>
+          
         </div>
       </li>
     </ul>
@@ -44,10 +44,18 @@
     <div class="container">
       <div class="row">
         <div class="col s12">
-          <h3>Search Our Courses</h3>
-          <div class="input-field">
-            <input class="white grey-text autocomplete" placeholder="Aruba, Cancun, etc..." type="text" id="autocomplete-input">
-          </div>
+          <h3>Our Courses</h3>
+          <a class='dropdown-trigger btn btn-large teal lighten-1' href='#' data-target='dropdown1'> <i class="material-icons left">send</i>    Search  our  courses  here      </a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a [routerLink]="['/java_web']">Java for Beginners</a></li>
+            <li><a [routerLink]="['/c_web']">C</a></li>
+            <li><a [routerLink]="['/phython_web']">Phython</a></li>
+            <li><a [routerLink]="['/web_web']">Web Designing</a></li>
+            <li><a [routerLink]="['/graphic_web']">Graphic Designing</a></li>
+            
+          </ul>
         </div>
       </div>
     </div>
@@ -62,39 +70,36 @@
           <span class="teal-text">Popular</span> Courses</h4>
         <div class="col s12 m4">
           <div class="card">
-            <div class="card-image">
-              <img src="https://image.ibb.co/hbEMux/resort1.jpg" alt="">
-              <span class="card-title">Java for Beginners</span>
-            </div>
+            <a [routerLink]="['/java_web']"><div class="card-image">
+              <img src="../../../assets/images/website/java.jpg" alt="">
+              <span class="card-title"><b>Java for Beginners</b></span>
+            </div></a>
             <div class="card-content">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium, architecto
-                delectus?
+              <p>Taking this course will provide you with a basic foundation in Java syntax, which is the first step towards becoming a successful Java developer. 
               </p>
             </div>
           </div>
         </div>
         <div class="col s12 m4">
           <div class="card">
-            <div class="card-image">
-              <img src="https://image.ibb.co/mn1egc/resort2.jpg" alt="">
-              <span class="card-title">Web Technologies</span>
-            </div>
+            <a [routerLink]="['/web_web']"><div class="card-image">
+              <img src="../../../assets/images/website/web.jpg" alt="">
+              <span class="card-title black-text"><b>Web Designing</b></span>
+            </div></a>
             <div class="card-content">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium, architecto
-                delectus?
+              <p>This course aims to provide beginners with the fundamental conceptual and practical skills needed to master the creation of basic websites.
               </p>
             </div>
           </div>
         </div>
         <div class="col s12 m4">
           <div class="card">
-            <div class="card-image">
-              <img src="https://image.ibb.co/mbCVnH/resort3.jpg" alt="">
-              <span class="card-title">Graphic Designning</span>
-            </div>
+            <a [routerLink]="['/graphic_web']"><div class="card-image">
+              <img src="../../../assets/images/website/graphic.jpg" alt="">
+              <span class="card-title"><b>Graphic Designning</b></span>
+            </div></a>
             <div class="card-content">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas aliquid fugiat corporis laudantium, architecto
-                delectus?
+              <p>Our Graphic Designing course has been designed to give you key conceptual and technical skills to transform fantastic concepts into visual reality.
               </p>
             </div>
           </div>
@@ -163,28 +168,33 @@
         <div class="col s12 m6">
           <div class="card-panel grey lighten-3">
             <h5>Please fill out this form to register for our courses</h5>
-            <form class="form">
+            <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
             <div class="input-field">
-              <input type="text" class="form-control" [(ngModel)]="registerUserData.name" name="name" placeholder="Name">
+              <input type="text" class="validate form-control" [(ngModel)]="registerUserData.name" name="name" placeholder="Name" required>
               <label for="name">Name</label>
+              <span class="helper-text" data-error="This is a required field." data-success=""></span>
             </div>
             <div class="input-field">
-                <input type="text" class="form-control" [(ngModel)]="registerUserData.email" name="email" placeholder="Email">
+                <input type="email" class="validate form-control" [(ngModel)]="registerUserData.email" name="email" placeholder="Email" required>
                 <label for="email">Email</label>
+                <span class="helper-text" data-error="Please insert a valid email." data-success=""></span>
             </div>
             <div class="input-field">
-              <input type="text" class="form-control" [(ngModel)]="registerUserData.role" name="role" placeholder="Student">
+              <input type="text" class="validate form-control" [(ngModel)]="registerUserData.role" name="role" placeholder="Student" required>
               <label for="name">Role</label>
+              <span class="helper-text" data-error="This is a required field." data-success=""></span>
             </div>
             <div class="input-field">
-                <input type="text" class="form-control" [(ngModel)]="registerUserData.username" name="username" placeholder="Username">
+                <input type="text" class="validate form-control" [(ngModel)]="registerUserData.username" name="username" placeholder="Username" required>
                 <label for="username">Username</label>
+                <span class="helper-text" data-error="This is a required field." data-success=""></span>
             </div>
             <div class="input-field">
-                <input type="password" class="form-control" [(ngModel)]="registerUserData.password" name="password" placeholder="Password">
+                <input type="password" class="validate form-control" [(ngModel)]="registerUserData.password" name="password" placeholder="Password" required>
                 <label for="password">Password</label>
+                <span class="helper-text" data-error="This is a required field." data-success=""></span>
             </div>
-            <input type="submit" (click)="registerUser()" [routerLink]="['/login']" value="Submit" class="btn">
+            <input type="submit" (click)="registerUser()" [routerLink]="['/login']" value="Submit" class="btn" [disabled]="!regForm.valid">
             
             </form>
           </div>
